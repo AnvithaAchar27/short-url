@@ -6,7 +6,7 @@ const URL = require('./models/url');
 const cors = require('cors');
 
 const app = express();
-const PORT = 8001;
+const PORT = process.env.PORT || 8001;
 app.use(cors());
 
 connectToMongoDB("mongodb://localhost:27017/short-url").then(()=> console.log("Connected to MongoDB")).catch((err)=> console.error(err));
